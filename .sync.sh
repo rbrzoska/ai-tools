@@ -5,7 +5,7 @@
 cd "$(dirname "$0")" || exit 0
 case "$1" in
   pull)
-    git pull --rebase --autostash -q 2>/dev/null
+    git pull --rebase --autostash -q 2>/dev/null || git rebase --abort 2>/dev/null
     ;;
   push)
     if [ -n "$(git status --porcelain)" ]; then
@@ -13,7 +13,7 @@ case "$1" in
       git commit -q -m "sync from $(hostname) $(date '+%Y-%m-%d %H:%M')"
     fi
     if [ -n "$(git log '@{u}..' --oneline 2>/dev/null)" ]; then
-      git pull --rebase --autostash -q 2>/dev/null
+      git pull --rebase --autostash -q 2>/dev/null || git rebase --abort 2>/dev/null
       git push -q 2>/dev/null
     fi
     ;;

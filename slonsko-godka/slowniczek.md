@@ -27,6 +27,8 @@
 - 2026-10-04: "Jo, w Chromie" (jako „tak”) → **"Ja, w Chromie"**: **jo = ja (zaimek), ja = tak**. Niy myl!
 - 2026-10-04: obadujy → **badom** (1. os. lp. "sprawdzam" = badom; wyjątek od wzoru -am → -a, niy uogólniać bez niego)
 
+- 2026-10-05: "skond sie wzion tyn cyn" → **"skond sie wziyna ta cyna"** (cena = **cyna**, rodzaj żeński: ta cyna; czas przeszły żeński -ęła → -yna: wziyna)
+
 ## Wzory (reguły z jego poprawek)
 - 1. os. lp.: -am / -om → **-a** (wciepuja, połoncza)
 - -aje → **-owo** (dodowo, wydowo)
@@ -41,6 +43,7 @@
 - e przed m w zapożyczeniach → **y** (chemia → chymia)
 - czas przeszły -azł / -ał → **-oz / -oł** (wylazł → wyloz, zrobił → zrobiył/zrobił — sprawdzaj u niego)
 - naj- → **noj-**, -ier- → **-iyr-** (nojpiyrw, nojlepszy); dla → **do**
+- cena = **cyna** (żeńska: ta cyna, tej cyny, cyny l.mn.); czas przeszły żeński -ęła → **-yna** (wziyna)
 - nagłówki tabel i etykiety tyż po naszymu (Kaj, Wiela, Kiej), niy ino zdania
 - "sie" przed czasownikiem: "sie samo zrobi", nie "zrobi sie sama"; "samo" (nijaki) w "samo sie zrobi"
 
@@ -61,12 +64,16 @@
 - 2026-10-04: "dalyj" – dalej (jego forma; jo pisoł "dalij" → używać "dalyj"); "znejdziesz" – znajdziesz (aj → ej, jak snejpować)
 - 2026-10-04: "tyn" – ten ("tyn cykl"); "powturzynie" – powtórzenie (pisownia jego, z ó → u; do potwierdzenia)
 - 2026-10-04: "na lisku" – na serwerze Discord „Akademia Liska” (niy Firefox!)
+- 2026-10-05: "powiydz" – powiedz; "tela" – tyle ("za tela"); "pieron" – też o karcie/gościu ("skond tyn pieron sie tu wzion")
+- 2026-10-05: "jynzyk" – język ("gorolski jynzyk" = polszczyzna)
+- 2026-10-05: "olyj" – olej, zostaw, niy ruszaj ("walkera olyj"); wzór -ej → -yj jak dalej → dalyj (do potwierdzenia)
 - 2026-10-04: "anim" – zanim ("anim zacznie rosnyc"); "rosnyć" – rosnąć (potwierdza wzór -nąć → -nyć)
 
 ## Niy używać
 - Litery ō, ŏ, ô, ã, õ.
 - Zmyślone słowa udające godka (np. "gorolok") — jak niy znom zwrotu, biera prosty opis ("godać jak gorol").
 - Czysto polskie wtrącenia w statusach ("sprawdzam", "teraz", "pamiętając").
+- 2026-10-05: cołkie zdania po polsku ("Zapisuję ustalenia… Teraz zabieram się za obie poprawki naraz") — "tyn polski gorolski jynzyk"; każdo linijka, tyż podsumowania, po naszymu.
 - "bebek" (zmyślone) i "bebok" na zwykły błąd — błąd to **babol**.
 
 ## Skala emocji

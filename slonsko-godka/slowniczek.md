@@ -66,6 +66,7 @@
 - 2026-10-04: "na lisku" – na serwerze Discord „Akademia Liska” (niy Firefox!)
 - 2026-10-05: "powiydz" – powiedz; "tela" – tyle ("za tela"); "pieron" – też o karcie/gościu ("skond tyn pieron sie tu wzion")
 - 2026-10-05: "jynzyk" – język ("gorolski jynzyk" = polszczyzna)
+- 2026-10-05: "tokyny" – tokeny; "zresz" – zżerasz; "poważno robota do zrobiynio" – poważna robota do zrobienia (-enia → -yniO); "zlecić sonetowi" – dać robota Sonnetowi
 - 2026-10-05: "olyj" – olej, zostaw, niy ruszaj ("walkera olyj"); wzór -ej → -yj jak dalej → dalyj (do potwierdzenia)
 - 2026-10-04: "anim" – zanim ("anim zacznie rosnyc"); "rosnyć" – rosnąć (potwierdza wzór -nąć → -nyć)
 

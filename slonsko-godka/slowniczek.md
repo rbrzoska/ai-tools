@@ -55,6 +55,7 @@
 - 2026-10-03: "tanie jak barszcz" – bardzo tanie
 - 2026-10-04: "kajs" – gdzieś ("zapisz se to kajs"); "burdel" – bałagan (o dashboardzie); "prostszo robota" – prostsza robota; "wihajstry" – te rzeczy / bajery (o kafelkach); "zaro ci podom" – zaraz ci podam
 - 2026-10-07: "dyszcz" – deszcz ("dyszczu aniwiatru")
+- 2026-10-08: "cera" – córka ("u cery" = u córki); "karnisz" (o lampkach MiBoxer, "jak mom jeden karnisz") – znaczenie do potwierdzenia, spytany
 - 2026-10-03 (sprostowane 2026-10-04): "bebok" – straszydło, potwór; NIE zwykły błąd, ino to straszne, co błędy robi ("Jo sie boja, że Sonnet by tam wpuściył beboka, co by narobił babole w kodzie"); "borok" – biedaczysko; "rozpłakać się" (o agencie) – poddać się
 - 2026-10-03: "ciurlać" – klikać / dłubać po kolei (np. na konsoli)
 - 2026-10-03: "ciulnyć" (jego forma) – walnąć, przyłożyć ("musiołbych ci ciulnyć")

@@ -26,6 +26,7 @@
 - 2026-10-03: "a reszta zrobi sie sama" → **"a reszta sie samo zrobi"** (szyk: "sie" przed czasownikiem, rodzaj nijaki "samo")
 - 2026-10-04: "Jo, w Chromie" (jako „tak”) → **"Ja, w Chromie"**: **jo = ja (zaimek), ja = tak**. Niy myl!
 - 2026-10-04: obadujy → **badom** (1. os. lp. "sprawdzam" = badom; wyjątek od wzoru -am → -a, niy uogólniać bez niego)
+- 2026-10-12: "wciepes" źle zrozumiane jako "wrzucisz" → **wciepes = wrzuciłeś** (wciepnył + -eś, skrócone)
 
 - 2026-10-05: "skond sie wzion tyn cyn" → **"skond sie wziyna ta cyna"** (cena = **cyna**, rodzaj żeński: ta cyna; czas przeszły żeński -ęła → -yna: wziyna)
 
@@ -46,6 +47,7 @@
 - cena = **cyna** (żeńska: ta cyna, tej cyny, cyny l.mn.); czas przeszły żeński -ęła → **-yna** (wziyna)
 - nagłówki tabel i etykiety tyż po naszymu (Kaj, Wiela, Kiej), niy ino zdania
 - "sie" przed czasownikiem: "sie samo zrobi", nie "zrobi sie sama"; "samo" (nijaki) w "samo sie zrobi"
+- czas przeszły 2. os. lp. skracany: -nąłeś → **-es** (wciepnyłeś → wciepes; do potwierdzenia przy innych czasownikach)
 
 ## Od niego (słowa, kerych użył)
 - 2026-10-02: "niy uzywej" – nie używaj; "godac" – mówić; "ody mie" – ode mnie; "ja?" – tak? / dobra? (pytanie o zgodę); "jak trza" – jak trzeba; "cołkim fajnie" – całkiem fajnie; "wuartykułować" – wyartykułować; "mosz" – masz; "dupny" (ciul dupny)
@@ -70,7 +72,7 @@
 - 2026-10-05: "jynzyk" – język ("gorolski jynzyk" = polszczyzna)
 - 2026-10-05: "tokyny" – tokeny; "zresz" – zżerasz; "poważno robota do zrobiynio" – poważna robota do zrobienia (-enia → -yniO); "zlecić sonetowi" – dać robota Sonnetowi
 - 2026-10-05: "olyj" – olej, zostaw, niy ruszaj ("walkera olyj"); wzór -ej → -yj jak dalej → dalyj (do potwierdzenia)
-- 2026-10-12: "wciepes" – wrzucisz (2. os. od wciepać: "wciepes to do katalogu?"); "som" – są ("kaj som deigny")
+- 2026-10-12: "wciepes" – wrzuciłeś (skrót od "wciepnył-eś", czas przeszły 2. os.: "wciepes to do katalogu?" = wrzuciłeś to do katalogu?); "som" – są ("kaj som deigny")
 - 2026-10-04: "anim" – zanim ("anim zacznie rosnyc"); "rosnyć" – rosnąć (potwierdza wzór -nąć → -nyć)
 - 2026-10-12: "srej już" – dej pokój, olyj, niy trza ("niy - srej już" na propozycja poprawki) (do potwierdzenia)
 

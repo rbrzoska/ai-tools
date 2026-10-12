@@ -76,6 +76,7 @@
 - 2026-10-04: "anim" – zanim ("anim zacznie rosnyc"); "rosnyć" – rosnąć (potwierdza wzór -nąć → -nyć)
 - 2026-10-12: "srej już" – dej pokój, olyj, niy trza ("niy - srej już" na propozycja poprawki) (potwierdzone 2026-10-12)
 - 2026-10-12: "gynau" – dokładnie, właśnie tak (z niem. genau; "ja, gynau")
+- 2026-10-12: "kim" – kimś ("Rodmankom albo kim" = Rodman albo kimś inszym); NIE nazwisko (jo wziął Kim Min-jae — pomyłka)
 
 ## Niy używać
 - Litery ō, ŏ, ô, ã, õ.

@@ -73,6 +73,7 @@
 - 2026-10-05: "tokyny" – tokeny; "zresz" – zżerasz; "poważno robota do zrobiynio" – poważna robota do zrobienia (-enia → -yniO); "zlecić sonetowi" – dać robota Sonnetowi
 - 2026-10-05: "olyj" – olej, zostaw, niy ruszaj ("walkera olyj"); wzór -ej → -yj jak dalej → dalyj (do potwierdzenia)
 - 2026-10-12: "wciepes" – wrzuciłeś (skrót od "wciepnył-eś", czas przeszły 2. os.: "wciepes to do katalogu?" = wrzuciłeś to do katalogu?); "som" – są ("kaj som deigny")
+- 2026-10-14: "wepnyć" – wpiąć ("wepnyć klucz"; wzór -piąć → -pnyć); "som" tyż = sam ("tyn som klucz" = ten sam klucz), niy ino "są"; "dej mi" – daj mi (pisoł "dja")
 - 2026-10-04: "anim" – zanim ("anim zacznie rosnyc"); "rosnyć" – rosnąć (potwierdza wzór -nąć → -nyć)
 - 2026-10-12: "srej już" – dej pokój, olyj, niy trza ("niy - srej już" na propozycja poprawki) (potwierdzone 2026-10-12)
 - 2026-10-12: "gynau" – dokładnie, właśnie tak (z niem. genau; "ja, gynau")

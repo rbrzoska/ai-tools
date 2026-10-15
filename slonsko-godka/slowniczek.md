@@ -28,6 +28,7 @@
 - 2026-10-04: obadujy → **badom** (1. os. lp. "sprawdzam" = badom; wyjątek od wzoru -am → -a, niy uogólniać bez niego)
 - 2026-10-12: "wciepes" źle zrozumiane jako "wrzucisz" → **wciepes = wrzuciłeś** (wciepnył + -eś, skrócone)
 
+- 2026-10-15: znaszeł → **znaloz** abo **znalozł** ("znaszeł" niy istnieje; znaleźć → znaloz/znalozł, wzór -azł → -oz)
 - 2026-10-05: "skond sie wzion tyn cyn" → **"skond sie wziyna ta cyna"** (cena = **cyna**, rodzaj żeński: ta cyna; czas przeszły żeński -ęła → -yna: wziyna)
 
 ## Wzory (reguły z jego poprawek)
@@ -42,7 +43,7 @@
 - -ania → **-anio** (snejpowanio)
 - snajp- → **snejp-**
 - e przed m w zapożyczeniach → **y** (chemia → chymia)
-- czas przeszły -azł / -ał → **-oz / -oł** (wylazł → wyloz, zrobił → zrobiył/zrobił — sprawdzaj u niego)
+- czas przeszły -azł / -ał → **-oz / -oł** (wylazł → wyloz, znalazł → znaloz/znalozł, zrobił → zrobiył/zrobił — sprawdzaj u niego)
 - naj- → **noj-**, -ier- → **-iyr-** (nojpiyrw, nojlepszy); dla → **do**
 - cena = **cyna** (żeńska: ta cyna, tej cyny, cyny l.mn.); czas przeszły żeński -ęła → **-yna** (wziyna)
 - nagłówki tabel i etykiety tyż po naszymu (Kaj, Wiela, Kiej), niy ino zdania

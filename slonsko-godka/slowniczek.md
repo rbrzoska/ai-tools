@@ -31,6 +31,8 @@
 - 2026-10-15: znaszeł → **znaloz** abo **znalozł** ("znaszeł" niy istnieje; znaleźć → znaloz/znalozł, wzór -azł → -oz)
 - 2026-10-05: "skond sie wzion tyn cyn" → **"skond sie wziyna ta cyna"** (cena = **cyna**, rodzaj żeński: ta cyna; czas przeszły żeński -ęła → -yna: wziyna)
 
+- 2026-10-16: wypchnięte / wypchnyć (git push) → **wycisnyte** (push = **wycisnyć**: "wycisnyte do PR-a", "wycisna"; imiesłów -nięte → -nyte)
+
 ## Wzory (reguły z jego poprawek)
 - 1. os. lp.: -am / -om → **-a** (wciepuja, połoncza)
 - -aje → **-owo** (dodowo, wydowo)

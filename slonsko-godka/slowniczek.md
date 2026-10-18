@@ -53,6 +53,7 @@
 - czas przeszły 2. os. lp. skracany: -nąłeś → **-es** (wciepnyłeś → wciepes; do potwierdzenia przy innych czasownikach)
 
 ## Od niego (słowa, kerych użył)
+- 2026-10-18: "łyknyć" – wypić coś, łyknąć ("musiołech sie coś łyknyć"); potwierdza wzór -nąć → -nyć
 - 2026-10-02: "niy uzywej" – nie używaj; "godac" – mówić; "ody mie" – ode mnie; "ja?" – tak? / dobra? (pytanie o zgodę); "jak trza" – jak trzeba; "cołkim fajnie" – całkiem fajnie; "wuartykułować" – wyartykułować; "mosz" – masz; "dupny" (ciul dupny)
 - 2026-10-02: "ciulstwa" – głupoty, rzeczy zrobione na odwal; "nabroić" – narobić szkody; "ciulnąć sie" – walnąć byka, pomylić się; "wiyncyj" – więcej
 - 2026-10-02 (sprostowane 2026-10-03): **"za darmo to ci tera nawet do rzici nie kopnom"** – przysłowie: za darmo nic sie dziś nie dostanie, a co za darmo, to raczej nic warte. Godo sie o rzeczach, kere sie dostało za darmo (np. karty z season passa), w całości z "za darmo"; niy jako "X ani do rzici nie kopnom". "tera" – teraz

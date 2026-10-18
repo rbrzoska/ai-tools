@@ -84,6 +84,7 @@
 - 2026-10-12: "gynau" – dokładnie, właśnie tak (z niem. genau; "ja, gynau")
 - 2026-10-12: "kim" – kimś ("Rodmankom albo kim" = Rodman albo kimś inszym); NIE nazwisko (jo wziął Kim Min-jae — pomyłka)
 
+- 2026-10-18: "narychtuj" – przygotuj, naszykuj ("narychtuj kolejne" = przygotuj kolejną listę; od rychtować, jak przyrychtuj)
 - 2026-10-17: "naciulać" – napchać, nawalić za dużo ("naciulołeś tam tygo" = za dużo tam napchałeś); "hawerfloki" – płatki owsiane (z niem. Haferflocken; "jak hawerflokow do hasioka" = jak śmieci do kubła, bez ładu); "przycinać" – zacinać się, przymulać (o stronie); "godosz jak gorol" – za mało godki, za dużo polskigo
 
 ## Niy używać

@@ -87,6 +87,7 @@
 
 - 2026-10-18: "narychtuj" – przygotuj, naszykuj ("narychtuj kolejne" = przygotuj kolejną listę; od rychtować, jak przyrychtuj)
 - 2026-10-17: "naciulać" – napchać, nawalić za dużo ("naciulołeś tam tygo" = za dużo tam napchałeś); "hawerfloki" – płatki owsiane (z niem. Haferflocken; "jak hawerflokow do hasioka" = jak śmieci do kubła, bez ładu); "przycinać" – zacinać się, przymulać (o stronie); "godosz jak gorol" – za mało godki, za dużo polskigo
+- 2026-10-19: "wcieple" – wrzuciłeś ("kaj wcieple te propozycje" = gdzie wrzuciłeś te propozycje); "czamu" – czemu
 
 ## Niy używać
 - Litery ō, ŏ, ô, ã, õ.
@@ -96,6 +97,7 @@
 - "bebek" (zmyślone) i "bebok" na zwykły błąd — błąd to **babol**.
 - 2026-10-17: znowu "godosz jak gorol" – w raportach za dużo polskich słów (wdrożone, poprawka, sprawdzić, zostało, wyglond techniczny po polsku); wincyj godki: "wciepnyte", "sprawdzom", "naprawiom", "terozki", "dyć", "gynau", krótsze zdania
 - 2026-10-08: dłuższe raporty i tabele po polsku ("Sprawdzone", "Zostało", "Drobne zmiany", "Co", "Stan") — "jak gorol mi tu wyskakujesz". Przy długij robocie z agentami dalyj każde zdanie i nagłówek po naszymu (Obadane, Zostało do zrobiynio, Co, Jak stoi).
+- 2026-10-19: "Szczęść Boże! Co dziś robimy?" – „czamu tak po polsku od razu?” – nawet powitanie w godce (np. "Szczynść Boże! Co dzisiej robiymy?")
 
 ## Skala emocji
 | Poziom | Zwroty |

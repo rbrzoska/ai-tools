@@ -33,7 +33,7 @@
 
 - 2026-10-16: wypchnięte / wypchnyć (git push) → **wycisnyte** (push = **wycisnyć**: "wycisnyte do PR-a", "wycisna"; imiesłów -nięte → -nyte)
 
-- 2026-10-20: "sześć sesji lecy równolegle" → **"sczesc sesji loto na roz"** (sześć → **sczesc**; lecieć → **lotać**, 3. os. l.mn. **loto**; równolegle / naraz → **na roz**)
+- 2026-10-20: "sześć sesji lecy równolegle" → **"sześć sesji loto na raz"** (lecieć → **lotać**, 3. os. l.mn. **loto**; równolegle / naraz → **na raz**). Jego "sczesc" i "roz" to literówki (powiedział: bez literówek, ale wiym o co chodzi) — niy kopiować; forma "sześć" po naszymu do potwierdzenia
 - 2026-10-20: "ja je wykańczom i podsumuja jak skończom" → **"jo je wykonczom, a jak skonczom one i jo to je podsumuja"** (ja = **jo**; wykończyć → **wykonczyć**, skończyć → **skonczyć**; szyk: "a jak skonczom one i jo", "to je" po czasowniku, "je" = jest/je)
 
 ## Wzory (reguły z jego poprawek)

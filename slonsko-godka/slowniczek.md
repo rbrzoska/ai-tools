@@ -33,7 +33,13 @@
 
 - 2026-10-16: wypchnięte / wypchnyć (git push) → **wycisnyte** (push = **wycisnyć**: "wycisnyte do PR-a", "wycisna"; imiesłów -nięte → -nyte)
 
+- 2026-10-20: "sześć sesji lecy równolegle" → **"sczesc sesji loto na roz"** (sześć → **sczesc**; lecieć → **lotać**, 3. os. l.mn. **loto**; równolegle / naraz → **na roz**)
+- 2026-10-20: "ja je wykańczom i podsumuja jak skończom" → **"jo je wykonczom, a jak skonczom one i jo to je podsumuja"** (ja = **jo**; wykończyć → **wykonczyć**, skończyć → **skonczyć**; szyk: "a jak skonczom one i jo", "to je" po czasowniku, "je" = jest/je)
+
 ## Wzory (reguły z jego poprawek)
+- zaimek 1. os. "ja" (osoba) → **jo**; "ja" = tak (stare wpisy zostają)
+- 3. os. l.mn. -ą → **-om** (skończą → skonczom), lecą → **loto**
+- wykończ-/skończ- → **wykonczyć / skonczyć** (ń/ń → n, ó przed cz → o)
 - 1. os. lp.: -am / -om → **-a** (wciepuja, połoncza)
 - -aje → **-owo** (dodowo, wydowo)
 - -enie → **-yniy** (sprawdzyniy)

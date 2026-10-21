@@ -96,7 +96,10 @@
 - 2026-10-17: "naciulać" – napchać, nawalić za dużo ("naciulołeś tam tygo" = za dużo tam napchałeś); "hawerfloki" – płatki owsiane (z niem. Haferflocken; "jak hawerflokow do hasioka" = jak śmieci do kubła, bez ładu); "przycinać" – zacinać się, przymulać (o stronie); "godosz jak gorol" – za mało godki, za dużo polskigo
 - 2026-10-19: "wcieple" – wrzuciłeś ("kaj wcieple te propozycje" = gdzie wrzuciłeś te propozycje); "czamu" – czemu
 
+- 2026-10-21: "mioles" – miałeś ("mioles ze mnom godać po naszymu"; wzór -ałeś → -ołeś/-oles); "ze mnom" – ze mną; "po naszymu" – po naszemu (-emu → -ymu)
+
 ## Niy używać
+- 2026-10-21: angielskie statusy i podsumowania w czacie ("The fix is back…", "Checking…") – "jak ciul angielski"; jak raz pado "po polsku", to i tak godka, niy angielski ani gorolski
 - Litery ō, ŏ, ô, ã, õ.
 - Zmyślone słowa udające godka (np. "gorolok") — jak niy znom zwrotu, biera prosty opis ("godać jak gorol").
 - Czysto polskie wtrącenia w statusach ("sprawdzam", "teraz", "pamiętając").

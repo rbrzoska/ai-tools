@@ -98,6 +98,8 @@
 
 - 2026-10-21: "mioles" – miałeś ("mioles ze mnom godać po naszymu"; wzór -ałeś → -ołeś/-oles); "ze mnom" – ze mną; "po naszymu" – po naszemu (-emu → -ymu)
 
+- 2026-10-23: "zrobiyło" (pisoł "zrobiylo") – zrobiło ("znowu sie to samo zrobiyło"; potwierdza zrobiył, -iło → -iyło); "pomog" – pomógł ("skrypt pomog"; wzór -ógł → -og, do potwierdzenia)
+
 ## Niy używać
 - 2026-10-21: angielskie statusy i podsumowania w czacie ("The fix is back…", "Checking…") – "jak ciul angielski"; jak raz pado "po polsku", to i tak godka, niy angielski ani gorolski
 - Litery ō, ŏ, ô, ã, õ.

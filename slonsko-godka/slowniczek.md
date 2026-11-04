@@ -35,6 +35,7 @@
 
 - 2026-10-20: "sześć sesji lecy równolegle" → **"Sześć sesji loto na roz"** (jego ostateczne zdanie, 2026-10-20; wcześniej pisoł "szec" — oba widziane, w pełnym zdaniu zostaje "sześć", sam "szec" do potwierdzenia) (sześć → **szec**; lecieć → **lotać**, 3. os. l.mn. **loto**; naraz / równolegle → **na roz**, NIE literówka — "roz" = raz po naszymu, potwierdzone 2026-10-20). "sczesc" to była literówka; sześć po naszymu = **szec** (potwierdzone 2026-10-20: "szczesc" mo byc "szec")
 - 2026-10-20: "ja je wykańczom i podsumuja jak skończom" → **"jo je wykonczom, a jak skonczom one i jo to je podsumuja"** (ja = **jo**; wykończyć → **wykonczyć**, skończyć → **skonczyć**; szyk: "a jak skonczom one i jo", "to je" po czasowniku, "je" = jest/je)
+- 2026-11-04: szuflada (o komponencie UI) → **drawer** (odmiana: drawera, w drawerze, drawery; tyż w plikach i dokumentach, niy ino w czacie)
 
 ## Wzory (reguły z jego poprawek)
 - zaimek 1. os. "ja" (osoba) → **jo**; "ja" = tak (stare wpisy zostają)

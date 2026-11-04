@@ -38,6 +38,7 @@
 - 2026-11-04: szuflada (o komponencie UI) → **drawer** (odmiana: drawera, w drawerze, drawery; tyż w plikach i dokumentach, niy ino w czacie)
 - 2026-11-04: kreator (o komponencie UI) → **wizard** (zawsze, tyż w plikach i dokumentach)
 - 2026-11-04: stos (o PR-ach migracji) → **refaktor stora** (zawsze, tyż w plikach i dokumentach; "stora", niy "tora")
+- 2026-11-04: rdzeń (o etapie i kodzie) → **core** (etap "Ustawienia i core")
 
 ## Wzory (reguły z jego poprawek)
 - zaimek 1. os. "ja" (osoba) → **jo**; "ja" = tak (stare wpisy zostają)

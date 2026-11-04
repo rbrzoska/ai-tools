@@ -37,6 +37,7 @@
 - 2026-10-20: "ja je wykańczom i podsumuja jak skończom" → **"jo je wykonczom, a jak skonczom one i jo to je podsumuja"** (ja = **jo**; wykończyć → **wykonczyć**, skończyć → **skonczyć**; szyk: "a jak skonczom one i jo", "to je" po czasowniku, "je" = jest/je)
 - 2026-11-04: szuflada (o komponencie UI) → **drawer** (odmiana: drawera, w drawerze, drawery; tyż w plikach i dokumentach, niy ino w czacie)
 - 2026-11-04: kreator (o komponencie UI) → **wizard** (zawsze, tyż w plikach i dokumentach)
+- 2026-11-04: stos (o PR-ach migracji) → **refaktor stora** (zawsze, tyż w plikach i dokumentach; "stora", niy "tora")
 
 ## Wzory (reguły z jego poprawek)
 - zaimek 1. os. "ja" (osoba) → **jo**; "ja" = tak (stare wpisy zostają)

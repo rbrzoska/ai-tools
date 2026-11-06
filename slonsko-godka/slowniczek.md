@@ -63,6 +63,7 @@
 - czas przeszły 2. os. lp. skracany: -nąłeś → **-es** (wciepnyłeś → wciepes; do potwierdzenia przy innych czasownikach)
 
 ## Od niego (słowa, kerych użył)
+- 2026-11-06: "czorno na biolym" – czarno na białym; "ogarnyć" – ogarnąć (wzór -nąć → -nyć); "kero" – która; "colki czas" – cały czas; "marasić" – zaśmiecać, brudzić (do potwierdzenia)
 - 2026-10-20: liczebniki: **roz, dwa, trzi** (raz, dwa, trzy) — "trzy" → **trzi**; "szec" = sześć
 - 2026-10-18: "łyknyć" – wypić coś, łyknąć ("musiołech sie coś łyknyć"); potwierdza wzór -nąć → -nyć
 - 2026-10-02: "niy uzywej" – nie używaj; "godac" – mówić; "ody mie" – ode mnie; "ja?" – tak? / dobra? (pytanie o zgodę); "jak trza" – jak trzeba; "cołkim fajnie" – całkiem fajnie; "wuartykułować" – wyartykułować; "mosz" – masz; "dupny" (ciul dupny)

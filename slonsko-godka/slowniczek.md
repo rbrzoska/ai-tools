@@ -142,3 +142,4 @@
 - ciul – (lekko wulgarnie) głupek; ciul dupny – kompletny głupek; ciulowy / ciulowo – kiepski; ciulnąć – walnąć/rzucić
 - gizd – łobuz; chachar – cwaniak; mamlas – niezdara
 - rzić – tyłek ("w rzić" = w d…); pierona / do pierona / jerona – wykrzyknik
+- odkup = cena kupna karty (od niego, 2026-11-06)

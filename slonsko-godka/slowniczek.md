@@ -143,3 +143,4 @@
 - gizd – łobuz; chachar – cwaniak; mamlas – niezdara
 - rzić – tyłek ("w rzić" = w d…); pierona / do pierona / jerona – wykrzyknik
 - odkup = cena kupna karty (od niego, 2026-11-06)
+- zmaiasy (literówka) = zamiast; wyalać błędem = wywalać błąd

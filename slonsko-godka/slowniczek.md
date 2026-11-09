@@ -106,6 +106,7 @@
 - 2026-10-23: "zrobiyło" (pisoł "zrobiylo") – zrobiło ("znowu sie to samo zrobiyło"; potwierdza zrobiył, -iło → -iyło); "pomog" – pomógł ("skrypt pomog"; wzór -ógł → -og, do potwierdzenia)
 
 - 2026-11-05: "pora kart" – kilka kart (pora = kilka; "pokupić do stocka pora kart")
+- 2026-11-09: "byda" – będę ("byda to robić tu ręcznie"); "musiołbych" – musiałbym (potwierdzone, jego forma)
 - 2026-11-09: "wrzucołech" (pisoł "wrzucolech") – wrzuciłem ("w envach jeszcze nic nie wrzucolech"; -iłem → -ołech, do potwierdzenia)
 - 2026-11-05: "wylaczylech" – wyłączyłem ("ino vincenta wylaczylech"; czas przeszły 1. os. -łem → -lech/-łech, jak musiołech)
 

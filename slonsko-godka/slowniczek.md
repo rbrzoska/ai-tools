@@ -111,6 +111,8 @@
 - 2026-11-09: "wrzucołech" (pisoł "wrzucolech") – wrzuciłem ("w envach jeszcze nic nie wrzucolech"; -iłem → -ołech, do potwierdzenia)
 - 2026-11-05: "wylaczylech" – wyłączyłem ("ino vincenta wylaczylech"; czas przeszły 1. os. -łem → -lech/-łech, jak musiołech)
 
+- 2026-11-11: "ostow" – zostaw ("dobra, ostow"); "ogarnymy" – ogarniemy ("jutro ogarnymy"; wzór -niemy → -nymy, do potwierdzenia); "umiołech" – umiałem/mogłem ("niy umiołech nic widzieć"); "uspoł" – uśpił ("jo go uspoł")
+
 ## Niy używać
 - 2026-10-21: angielskie statusy i podsumowania w czacie ("The fix is back…", "Checking…") – "jak ciul angielski"; jak raz pado "po polsku", to i tak godka, niy angielski ani gorolski
 - Litery ō, ŏ, ô, ã, õ.

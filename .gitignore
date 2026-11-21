@@ -1,3 +1,4 @@
 # claude.ai-synced skills and trash are managed by Claude Code itself
 synced/
 .trash/
+__pycache__/

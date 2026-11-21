@@ -1,7 +1,7 @@
 export const meta = {
   name: 'factory-calibrate',
   description: 'Factory: run the judges on historical PRs as the human reviewers saw them and measure how many human findings they reproduce',
-  whenToUse: 'After changing a judge or refuter prompt. args: { prs: number[], repo?: path } - PR numbers from the repository's control set (see `factory calibrate-init`).',
+  whenToUse: 'After changing a judge or refuter prompt. args: { prs: number[], repo?: path } - PR numbers from the repository control set (see `factory calibrate-init`).',
   phases: [
     { title: 'Prepare', detail: 'worktree at the reviewed commit' },
     { title: 'Judge', detail: 'spec and standards judges' },
@@ -82,6 +82,23 @@ const JUDGES = [
 ]
 
 const AGENT_DIR = '~/.claude/skills/factory/agents'
+
+// Model per stage (owner rule): light stages on haiku, the rest on sonnet, heavy work (size L or high
+// risk) on opus. Fable only when the user asked for it: args.models = { <stage> | all: 'fable' | ... }.
+const STAGE_TIER = {
+  command: 'light', gates: 'light',
+  grill: 'scaled', spec: 'scaled', plan: 'scaled', implement: 'scaled', judge: 'scaled',
+  refute: 'scaled', attack: 'scaled', retro: 'scaled',
+  merge: 'standard', match: 'standard', seed: 'standard', check: 'standard',
+}
+function modelFor(stage, scale = {}) {
+  const override = args.models && (args.models[stage] || args.models.all)
+  if (override) return override
+  const tier = STAGE_TIER[stage] || 'standard'
+  if (tier === 'light') return 'haiku'
+  if (tier === 'scaled' && (scale.size === 'L' || scale.risk === 'high')) return 'opus'
+  return 'sonnet'
+}
 const incidents = []
 
 async function role(agentType, prompt, opts) {
@@ -101,7 +118,7 @@ async function role(agentType, prompt, opts) {
 function runCommand(command, label, phaseTitle, schema) {
   return agent(
     `Run exactly this command and return its JSON output in the structured result, unchanged. Do not fix or retry anything; if it fails, put the error text in "error".\n\n${command}`,
-    { model: 'haiku', effort: 'low', label, phase: phaseTitle, schema },
+    { model: modelFor('command'), effort: 'low', label, phase: phaseTitle, schema },
   )
 }
 
@@ -111,7 +128,7 @@ async function calibrate(pr) {
   const context = `Run directory: ${init.viewDir}\nWorktree: ${init.worktree}\nBase commit: ${init.baseSha}`
 
   const judged = await parallel(JUDGES.map(judge => () =>
-    role(judge.agentType, context, { model: 'opus', label: `judge:${judge.key}:${pr}`, phase: 'Judge', schema: FINDINGS })
+    role(judge.agentType, context, { model: modelFor('judge', { size: args.size, risk: args.risk }), label: `judge:${judge.key}:${pr}`, phase: 'Judge', schema: FINDINGS })
       .then(result => result && { judge: judge.key, ...result })))
   const missingJudges = JUDGES.filter((_judge, index) => !judged[index]).map(judge => judge.key)
   if (missingJudges.length) {
@@ -125,7 +142,7 @@ async function calibrate(pr) {
     result.findings.map((finding, index) => ({ id: `${result.judge}-${index + 1}`, judge: result.judge, ...finding })))
 
   const findings = (await pipeline(raw, finding =>
-    role('factory-refuter', `${context}\n\nFinding to refute:\n${JSON.stringify(finding, null, 2)}`, { model: 'opus',
+    role('factory-refuter', `${context}\n\nFinding to refute:\n${JSON.stringify(finding, null, 2)}`, { model: modelFor('refute', { size: args.size, risk: args.risk }),
       label: `refute:${pr}:${finding.id}`,
       phase: 'Refute',
       schema: VERDICT,
@@ -133,7 +150,7 @@ async function calibrate(pr) {
 
   const matched = await agent(
     `Read the entry with "pr": ${pr} in ${init.controlSet} and take its "reviewFindings" (what human reviewers flagged), numbered from 0 in file order.\n\nAutomated findings on the same code:\n${JSON.stringify(findings.map(({ id, path, line, claim, evidence }) => ({ id, path, line, claim, evidence })), null, 2)}\n\nFor each human finding return its index, its summary, and the ids of automated findings that describe that same problem: the same root issue at the same place. Same file or same topic with a different problem is not a match. Each automated finding may match at most one human finding; when it fits several, give it to the closest one. Return an empty list when nothing matches. Read no other files.`,
-    { model: 'sonnet', label: `match:${pr}`, phase: 'Match', schema: MATCH },
+    { model: modelFor('match'), label: `match:${pr}`, phase: 'Match', schema: MATCH },
   )
 
   await runCommand(`${FACTORY} drop-worktree ${init.worktree}`, `cleanup:${pr}`, 'Match', {

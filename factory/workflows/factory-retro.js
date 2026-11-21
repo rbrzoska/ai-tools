@@ -9,6 +9,23 @@ export const meta = {
 }
 
 const AGENT_DIR = '~/.claude/skills/factory/agents'
+
+// Model per stage (owner rule): light stages on haiku, the rest on sonnet, heavy work (size L or high
+// risk) on opus. Fable only when the user asked for it: args.models = { <stage> | all: 'fable' | ... }.
+const STAGE_TIER = {
+  command: 'light', gates: 'light',
+  grill: 'scaled', spec: 'scaled', plan: 'scaled', implement: 'scaled', judge: 'scaled',
+  refute: 'scaled', attack: 'scaled', retro: 'scaled',
+  merge: 'standard', match: 'standard', seed: 'standard', check: 'standard',
+}
+function modelFor(stage, scale = {}) {
+  const override = args.models && (args.models[stage] || args.models.all)
+  if (override) return override
+  const tier = STAGE_TIER[stage] || 'standard'
+  if (tier === 'light') return 'haiku'
+  if (tier === 'scaled' && (scale.size === 'L' || scale.risk === 'high')) return 'opus'
+  return 'sonnet'
+}
 const LEDGER = '~/.factory/ledger.jsonl'
 
 const RETRO = {
@@ -62,14 +79,14 @@ async function role(agentType, prompt, opts) {
 }
 
 phase('Retro')
-const retro = await role('factory-retro', 'Run the retrospective now.', { model: 'opus', label: 'retro', phase: 'Retro', schema: RETRO })
+const retro = await role('factory-retro', 'Run the retrospective now.', { model: modelFor('retro'), label: 'retro', phase: 'Retro', schema: RETRO })
 if (!retro) return { status: 'failed', incidents }
 
 phase('Check')
 const checked = await pipeline(retro.problems, problem =>
   agent(
     `A retrospective claims this problem of an agent factory:\n${JSON.stringify(problem, null, 2)}\n\nFor each entry in "occurrences" open what it cites (ledger:<n> means line n of ${LEDGER}, counting from 1; otherwise it is a file path) and decide whether that line or file really shows this problem. Do not judge the proposed fix.`,
-    { model: 'sonnet', label: `check:${problem.title.slice(0, 40)}`, phase: 'Check', schema: CHECKED },
+    { model: modelFor('check'), label: `check:${problem.title.slice(0, 40)}`, phase: 'Check', schema: CHECKED },
   ).then(result => {
     const supported = result ? result.occurrences.filter(item => item.supports).map(item => item.ref) : []
     return {

@@ -15,6 +15,23 @@ export const meta = {
 const FACTORY = '~/.claude/skills/factory/bin/factory'
 const AGENT_DIR = '~/.claude/skills/factory/agents'
 
+// Model per stage (owner rule): light stages on haiku, the rest on sonnet, heavy work (size L or high
+// risk) on opus. Fable only when the user asked for it: args.models = { <stage> | all: 'fable' | ... }.
+const STAGE_TIER = {
+  command: 'light', gates: 'light',
+  grill: 'scaled', spec: 'scaled', plan: 'scaled', implement: 'scaled', judge: 'scaled',
+  refute: 'scaled', attack: 'scaled', retro: 'scaled',
+  merge: 'standard', match: 'standard', seed: 'standard', check: 'standard',
+}
+function modelFor(stage, scale = {}) {
+  const override = args.models && (args.models[stage] || args.models.all)
+  if (override) return override
+  const tier = STAGE_TIER[stage] || 'standard'
+  if (tier === 'light') return 'haiku'
+  if (tier === 'scaled' && (scale.size === 'L' || scale.risk === 'high')) return 'opus'
+  return 'sonnet'
+}
+
 const IMPLEMENTATION = {
   type: 'object',
   required: ['summary', 'commits', 'notDone'],
@@ -165,7 +182,8 @@ const reviewOnly = Boolean(args.reviewOnly)
 const judgeRuns = args.judgeRuns ?? 2
 const maxFixRounds = args.maxFixRounds ?? 2
 const maxReviewRounds = reviewOnly ? 1 : (args.maxReviewRounds ?? 2)
-const implementerModel = size === 'L' ? 'opus' : 'sonnet'
+const scale = { size, risk: args.risk }
+const implementerModel = modelFor('implement', scale)
 const context = `Run directory: ${run.runDir}\nWorktree: ${run.worktree}\nBase commit: ${run.baseSha}`
 const incidents = []
 
@@ -186,7 +204,7 @@ async function role(agentType, prompt, opts) {
 function runCommand(command, label, phaseTitle, schema) {
   return agent(
     `Run exactly this command with a long timeout and return its JSON output in the structured result, unchanged. Do not fix or retry anything; if it fails, put the error text in "error".\n\n${command}`,
-    { model: 'haiku', effort: 'low', label, phase: phaseTitle, schema },
+    { model: modelFor('command'), effort: 'low', label, phase: phaseTitle, schema },
   )
 }
 
@@ -204,7 +222,7 @@ function inDependencyOrder(list) {
 }
 
 function runGates(label) {
-  return role('factory-gates', context, { model: 'haiku', label: `gates:${label}`, phase: 'Gates', schema: GATES })
+  return role('factory-gates', context, { model: modelFor('gates'), label: `gates:${label}`, phase: 'Gates', schema: GATES })
 }
 
 function implement(brief, label) {
@@ -234,7 +252,7 @@ async function implementUntilGreen(brief, label) {
 async function judgeRepeated(judge, round) {
   const runs = await parallel(Array.from({ length: judgeRuns }, (_unused, runIndex) => () =>
     role(judge.agentType, `${context}\n\nIndependent review pass ${runIndex + 1} of ${judgeRuns}.`, {
-      model: 'opus',
+      model: modelFor('judge', scale),
       label: `judge:${judge.key}:r${round}:p${runIndex + 1}`,
       phase: 'Judge',
       schema: FINDINGS,
@@ -248,7 +266,7 @@ async function judgeRepeated(judge, round) {
   if (completed.length > 1 && raw.length) {
     const merged = await agent(
       `These findings come from ${completed.length} independent passes of the same "${judge.key}" reviewer over the same change. Group findings that describe the same problem at the same place; a finding joins at most one group. For each group return the member ids and one finding that states the problem best (keep the most severe severity among members). Every id must appear in exactly one group. Read no files.\n\n${JSON.stringify(raw, null, 2)}`,
-      { model: 'sonnet', label: `merge:${judge.key}:r${round}`, phase: 'Merge', schema: MERGED },
+      { model: modelFor('merge'), label: `merge:${judge.key}:r${round}`, phase: 'Merge', schema: MERGED },
     )
     if (merged) clusters = merged.clusters
   }
@@ -280,7 +298,7 @@ async function judgeRepeated(judge, round) {
 
 async function attack(round) {
   const written = await role('factory-adversary', context, {
-    model: 'opus',
+    model: modelFor('attack', scale),
     label: `adversary:r${round}`,
     phase: 'Attack',
     schema: PROBES,
@@ -343,7 +361,7 @@ for (let round = 1; round <= maxReviewRounds; round++) {
 
   const checked = (await pipeline(findings, finding =>
     role('factory-refuter', `${context}\n\nFinding to refute:\n${JSON.stringify(finding, null, 2)}`, {
-      model: 'opus',
+      model: modelFor('refute', scale),
       label: `refute:${finding.id}`,
       phase: 'Refute',
       schema: VERDICT,

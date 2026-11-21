@@ -82,6 +82,23 @@ const PLAN = {
 }
 
 const AGENT_DIR = '~/.claude/skills/factory/agents'
+
+// Model per stage (owner rule): light stages on haiku, the rest on sonnet, heavy work (size L or high
+// risk) on opus. Fable only when the user asked for it: args.models = { <stage> | all: 'fable' | ... }.
+const STAGE_TIER = {
+  command: 'light', gates: 'light',
+  grill: 'scaled', spec: 'scaled', plan: 'scaled', implement: 'scaled', judge: 'scaled',
+  refute: 'scaled', attack: 'scaled', retro: 'scaled',
+  merge: 'standard', match: 'standard', seed: 'standard', check: 'standard',
+}
+function modelFor(stage, scale = {}) {
+  const override = args.models && (args.models[stage] || args.models.all)
+  if (override) return override
+  const tier = STAGE_TIER[stage] || 'standard'
+  if (tier === 'light') return 'haiku'
+  if (tier === 'scaled' && (scale.size === 'L' || scale.risk === 'high')) return 'opus'
+  return 'sonnet'
+}
 const incidents = []
 
 async function role(agentType, prompt, opts) {
@@ -103,7 +120,8 @@ const answers = args.answers || {}
 const context = `Run directory: ${run.runDir}\nWorktree (code at base commit ${run.baseSha}): ${run.worktree}`
 
 phase('Grill')
-const grill = await role('factory-grill', `${context}\n\nTask:\n${task}`, { model: 'opus',
+const hint = { size: args.size, risk: args.risk }
+const grill = await role('factory-grill', `${context}\n\nTask:\n${task}`, { model: modelFor('grill', hint),
   label: 'grill',
   schema: GRILL,
 })
@@ -123,12 +141,12 @@ const decisions = grill.questions.map(question => ({
 }))
 
 phase('Spec')
-const spec = await role('factory-spec', `${context}\n\nTask:\n${task}\n\nFacts:\n${JSON.stringify(grill.facts, null, 2)}\n\nSettled decisions:\n${JSON.stringify(decisions, null, 2)}`, { model: 'opus', label: 'spec', schema: SPEC },
+const spec = await role('factory-spec', `${context}\n\nTask:\n${task}\n\nFacts:\n${JSON.stringify(grill.facts, null, 2)}\n\nSettled decisions:\n${JSON.stringify(decisions, null, 2)}`, { model: modelFor('spec', { size: grill.size, risk: grill.risk }), label: 'spec', schema: SPEC },
 )
 if (!spec) return { status: 'failed', stage: 'spec' }
 
 phase('Plan')
-const plan = await role('factory-planner', `${context}\n\nTask size estimated by grilling: ${grill.size}`, { model: 'opus',
+const plan = await role('factory-planner', `${context}\n\nTask size estimated by grilling: ${grill.size}`, { model: modelFor('plan', { size: grill.size, risk: grill.risk }),
   label: 'plan',
   schema: PLAN,
 })

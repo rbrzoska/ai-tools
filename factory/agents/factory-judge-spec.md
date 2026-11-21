@@ -1,7 +1,7 @@
 ---
 name: factory-judge-spec
 description: Factory stage 6. Skeptical judge of spec compliance - checks the diff against every acceptance criterion and for scope creep.
-model: opus
+model: sonnet
 tools: Read, Grep, Glob, Bash
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: factory-planner
 description: Factory stage 3. Splits an approved spec into tracer-bullet tickets with blocking edges.
-model: opus
+model: sonnet
 tools: Read, Grep, Glob, Bash, Write
 ---
 

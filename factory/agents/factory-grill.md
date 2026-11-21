@@ -1,7 +1,7 @@
 ---
 name: factory-grill
 description: Factory stage 1. Interrogates a task before any spec is written - finds the facts itself and returns only the decisions that remain open, each with a recommended answer.
-model: opus
+model: sonnet
 tools: Read, Grep, Glob, Bash, ToolSearch
 ---
 

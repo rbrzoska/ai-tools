@@ -37,6 +37,19 @@ Keys (all optional; defaults fit a JavaScript / TypeScript project, `"language":
 
 When the config was just guessed (`configGuessed: true` from `init`, or `guessed: true` from `config`), show it to the user and get it confirmed before the spec. A gate without a command is reported `skipped`, never `pass`.
 
+## Models
+
+Every workflow picks the model per stage (`modelFor` in each script):
+
+| Stage | Model |
+|---|---|
+| running a command, the gates relay | haiku |
+| merging judge passes, matching findings, seeding canaries, checking retro claims | sonnet |
+| grill, spec, plan, implementer, judges, adversary, refuter, retro | sonnet; **opus when the task is size `L` or risk `high`** |
+| fable | only when the user asks for it |
+
+Pass `size` and `risk` from the spec result to `factory-build` (and to `factory-canary`), so heavy work gets opus. When you already know a task is big before grilling, pass them to `factory-spec` too. Override only on the user's request: `args.models = { all: 'opus' }`, or per stage (`{ judge: 'fable', implement: 'opus' }`); stage names: `command`, `gates`, `grill`, `spec`, `plan`, `implement`, `judge`, `refute`, `attack`, `merge`, `match`, `seed`, `check`, `retro`.
+
 ## 1. Start the run
 
 ```bash
@@ -54,13 +67,13 @@ Call Workflow with `scriptPath: <workflows>/factory-spec.js` and `args: { run, t
 
 ## 3. Build (workflow `factory-build`)
 
-After approval call Workflow with `scriptPath: <workflows>/factory-build.js` and `args: { run, tickets, size }` taken from the spec result. To review an existing branch without implementing, pass `reviewOnly: true`.
+After approval call Workflow with `scriptPath: <workflows>/factory-build.js` and `args: { run, tickets, size, risk }` taken from the spec result. To review an existing branch without implementing, pass `reviewOnly: true`.
 
 The build runs each judge `judgeRuns` times (default 2) and merges the passes: a finding seen in only one pass is `stable: false`. In parallel an adversary writes probe tests and runs them; probes that fail become findings with a rerunnable test as evidence, archived in `<runDir>/probes/`. Report unstable findings, spec-judge verdicts that differ between passes, and the probe results in their own lines.
 
 ## 4. Check the checkers (workflow `factory-canary`)
 
-When the build returns `passed`, call Workflow with `scriptPath: <workflows>/factory-canary.js` and `args: { run, bugs: 3 }`. It plants known bugs in a throwaway copy and measures how many the tests kill and how many the judges report. Read `~/.factory/canary-keys/<runId>/tests.json` yourself for the test result.
+When the build returns `passed`, call Workflow with `scriptPath: <workflows>/factory-canary.js` and `args: { run, bugs: 3, size, risk }`. It plants known bugs in a throwaway copy and measures how many the tests kill and how many the judges report. Read `~/.factory/canary-keys/<runId>/tests.json` yourself for the test result.
 
 Canaries are blatant spec violations, so a perfect canary score only shows the judges were awake. The honest ceiling on trust is the latest calibration against human reviews of the same repository (`event: calibration` in `~/.factory/ledger.jsonl`, produced by workflow `factory-calibrate` with `args: { prs, repo }` from that repository's control set). State both numbers in the report and derive the trust level from them:
 

@@ -1,7 +1,7 @@
 ---
 name: factory-judge-robustness
 description: Factory stage 6. Skeptical judge of failure paths in a change - missing guards, wrong assumptions about collaborators and backend data, timing, and what the user sees when something goes wrong.
-model: opus
+model: sonnet
 tools: Read, Grep, Glob, Bash
 ---
 

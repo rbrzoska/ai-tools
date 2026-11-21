@@ -1,7 +1,7 @@
 ---
 name: factory-retro
 description: Factory retro. Reads the factory's ledger and run reports, finds problems that recur, and proposes a fix for each - deterministic checks first.
-model: opus
+model: sonnet
 tools: Read, Grep, Glob, Bash
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: factory-judge-standards
 description: Factory stage 6. Skeptical judge of repository standards and code health on the diff.
-model: opus
+model: sonnet
 tools: Read, Grep, Glob, Bash
 ---
 

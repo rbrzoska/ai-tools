@@ -106,6 +106,23 @@ const JUDGES = [
 ]
 
 const AGENT_DIR = '~/.claude/skills/factory/agents'
+
+// Model per stage (owner rule): light stages on haiku, the rest on sonnet, heavy work (size L or high
+// risk) on opus. Fable only when the user asked for it: args.models = { <stage> | all: 'fable' | ... }.
+const STAGE_TIER = {
+  command: 'light', gates: 'light',
+  grill: 'scaled', spec: 'scaled', plan: 'scaled', implement: 'scaled', judge: 'scaled',
+  refute: 'scaled', attack: 'scaled', retro: 'scaled',
+  merge: 'standard', match: 'standard', seed: 'standard', check: 'standard',
+}
+function modelFor(stage, scale = {}) {
+  const override = args.models && (args.models[stage] || args.models.all)
+  if (override) return override
+  const tier = STAGE_TIER[stage] || 'standard'
+  if (tier === 'light') return 'haiku'
+  if (tier === 'scaled' && (scale.size === 'L' || scale.risk === 'high')) return 'opus'
+  return 'sonnet'
+}
 const incidents = []
 
 async function role(agentType, prompt, opts) {
@@ -128,7 +145,7 @@ const bugCount = args.bugs ?? 3
 function runCommand(command, label, phaseTitle, schema) {
   return agent(
     `Run exactly this command with a long timeout and return its JSON output in the structured result, unchanged. Do not fix or retry anything; if it fails, put the error text in "error".\n\n${command}`,
-    { model: 'haiku', effort: 'low', label, phase: phaseTitle, schema },
+    { model: modelFor('command'), effort: 'low', label, phase: phaseTitle, schema },
   )
 }
 
@@ -138,7 +155,7 @@ phase('Seed')
 const init = await runCommand(`${FACTORY} canary-init ${run.runDir}`, 'canary-init', 'Seed', INIT)
 if (!init || init.error) return { status: 'failed', stage: 'canary-init', error: init && init.error }
 
-const seeded = await role('factory-canary-seeder', `Canary worktree: ${init.canaryWorktree}\nView directory: ${init.viewDir}\nKey directory: ${init.keyDir}\nBase commit: ${init.baseSha}\nNumber of bugs to plant: ${bugCount}`, { model: 'sonnet', label: 'seed', phase: 'Seed', schema: SEEDED },
+const seeded = await role('factory-canary-seeder', `Canary worktree: ${init.canaryWorktree}\nView directory: ${init.viewDir}\nKey directory: ${init.keyDir}\nBase commit: ${init.baseSha}\nNumber of bugs to plant: ${bugCount}`, { model: modelFor('seed'), label: 'seed', phase: 'Seed', schema: SEEDED },
 )
 if (!seeded || !seeded.bugs.length) return { status: 'failed', stage: 'seed' }
 
@@ -148,7 +165,7 @@ if (!tests || tests.error) return { status: 'failed', stage: 'canary-run', error
 
 const judgeContext = `Run directory: ${init.viewDir}\nWorktree: ${init.canaryWorktree}\nBase commit: ${init.baseSha}`
 const judged = await parallel(JUDGES.map(judge => () =>
-  role(judge.agentType, judgeContext, { model: 'opus', label: `judge:${judge.key}`, phase: 'Judge', schema: FINDINGS })
+  role(judge.agentType, judgeContext, { model: modelFor('judge', { size: args.size, risk: args.risk }), label: `judge:${judge.key}`, phase: 'Judge', schema: FINDINGS })
     .then(result => result && { judge: judge.key, ...result })))
 const missingJudges = JUDGES.filter((_judge, index) => !judged[index]).map(judge => judge.key)
 const findings = judged.filter(Boolean).flatMap(result =>
@@ -169,7 +186,7 @@ let byMeaning = {}
 if (unmatched.length && findings.length) {
   const matched = await agent(
     `Seeded bugs:\n${JSON.stringify(unmatched, null, 2)}\n\nReview findings:\n${JSON.stringify(findings.map(({ id, path, line, claim, evidence }) => ({ id, path, line, claim, evidence })), null, 2)}\n\nFor each seeded bug list the ids of findings that describe that same defect: the same wrong behaviour at the same place. A finding about the same file or the same feature that names a different problem is not a match. Return an empty list when nothing matches. Do not read any files.`,
-    { model: 'sonnet', label: 'match', phase: 'Match', schema: MATCH },
+    { model: modelFor('match'), label: 'match', phase: 'Match', schema: MATCH },
   )
   byMeaning = Object.fromEntries(((matched && matched.matches) || []).map(match => [match.bugId, match.findingIds]))
 }

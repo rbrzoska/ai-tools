@@ -1,7 +1,7 @@
 ---
 name: factory-adversary
 description: Factory stage 6. Tries to break a finished change by writing and running throwaway probe tests against the acceptance criteria, including inputs nobody tested.
-model: opus
+model: sonnet
 tools: Read, Grep, Glob, Bash, Write, Edit
 ---
 

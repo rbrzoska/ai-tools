@@ -1,7 +1,7 @@
 ---
 name: factory-spec
 description: Factory stage 2. Turns a grilled task and its settled decisions into spec.md with testable acceptance criteria and agreed test seams.
-model: opus
+model: sonnet
 tools: Read, Grep, Glob, Bash, Write
 ---
 

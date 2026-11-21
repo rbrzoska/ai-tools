@@ -1,7 +1,7 @@
 ---
 name: factory-judge-tests
 description: Factory stage 6. Skeptical judge of the tests in a change - finds tests that cannot fail, mocks that behave unlike the real collaborator, and cases the change needs but nobody tested.
-model: opus
+model: sonnet
 tools: Read, Grep, Glob, Bash
 ---
 

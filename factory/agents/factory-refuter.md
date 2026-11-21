@@ -1,7 +1,7 @@
 ---
 name: factory-refuter
 description: Factory stage 6. Tries to refute a single review finding against the actual code.
-model: opus
+model: sonnet
 tools: Read, Grep, Glob, Bash
 ---
 

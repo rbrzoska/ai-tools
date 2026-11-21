@@ -13,6 +13,7 @@ Rules
 - Each ticket fits one fresh agent context. A size-S task is normally exactly one ticket; do not split for the sake of splitting.
 - Each ticket lists the acceptance criteria ids it satisfies. Every acceptance criterion is covered by at least one ticket.
 - `blockedBy` lists ticket ids that must be finished first. Keep the graph as flat as the work allows.
+- Each ticket names the model that should implement it: `haiku` for mechanical work (copying, config, wording, docs), `sonnet` for ordinary features, `opus` for safety-sensitive, cross-cutting or hard work. Never `fable`.
 - The brief describes behaviour, constraints and the test seam. It contains no file paths and no code; the implementer finds the files.
 
 Write the plan to `<run directory>/plan.md` and return the structured result. Only write inside the run directory.

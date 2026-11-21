@@ -225,9 +225,16 @@ function runGates(label) {
   return role('factory-gates', context, { model: modelFor('gates'), label: `gates:${label}`, phase: 'Gates', schema: GATES })
 }
 
+// A ticket may carry its own model from the planner (haiku | sonnet | opus); args.models still wins.
+const TICKET_MODELS = new Set(['haiku', 'sonnet', 'opus'])
+const ticketModel = Object.fromEntries((tickets || [])
+  .filter(ticket => TICKET_MODELS.has(String(ticket.model || '').toLowerCase()))
+  .map(ticket => [ticket.id, String(ticket.model).toLowerCase()]))
+
 function implement(brief, label) {
+  const override = args.models && (args.models.implement || args.models.all)
   return role('factory-implementer', `${context}\n\n${brief}`, {
-    model: implementerModel,
+    model: override || ticketModel[String(label).split(':')[0]] || implementerModel,
     label,
     phase: 'Implement',
     schema: IMPLEMENTATION,

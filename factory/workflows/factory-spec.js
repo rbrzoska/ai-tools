@@ -70,6 +70,7 @@ const PLAN = {
         type: 'object',
         required: ['id', 'title', 'brief', 'acceptanceCriteriaIds', 'blockedBy'],
         properties: {
+          model: { enum: ['haiku', 'sonnet', 'opus'] },
           id: { type: 'string' },
           title: { type: 'string' },
           brief: { type: 'string' },

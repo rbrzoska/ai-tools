@@ -178,6 +178,11 @@ const JUDGES = [
 ]
 
 const { run, tickets, size } = args
+// A lighter review when the owner asks for it: args.judges = ['spec', 'robustness'], args.adversary = false.
+const ACTIVE_JUDGES = Array.isArray(args.judges) && args.judges.length
+  ? JUDGES.filter(judge => args.judges.includes(judge.key))
+  : JUDGES
+const adversaryOn = args.adversary !== false
 const reviewOnly = Boolean(args.reviewOnly)
 const judgeRuns = args.judgeRuns ?? 2
 const maxFixRounds = args.maxFixRounds ?? 2
@@ -360,10 +365,10 @@ const reviewRounds = []
 let openBlocking = []
 for (let round = 1; round <= maxReviewRounds; round++) {
   const [judged, attacked] = await Promise.all([
-    parallel(JUDGES.map(judge => () => judgeRepeated(judge, round))),
-    attack(round),
+    parallel(ACTIVE_JUDGES.map(judge => () => judgeRepeated(judge, round))),
+    adversaryOn ? attack(round) : Promise.resolve({ written: null, ran: null, findings: [] }),
   ])
-  const missingJudges = JUDGES.filter((_judge, index) => !judged[index]).map(judge => judge.key)
+  const missingJudges = ACTIVE_JUDGES.filter((_judge, index) => !judged[index]).map(judge => judge.key)
   const findings = [...judged.filter(Boolean).flatMap(result => result.findings), ...attacked.findings]
 
   const checked = (await pipeline(findings, finding =>

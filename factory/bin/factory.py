@@ -384,17 +384,17 @@ def run_tests(project, worktree, specs):
     return code, output, round(seconds, 1)
 
 
-def gate_tests_repeated(project, worktree, specs):
-    runs = [run_tests(project, worktree, specs) for _ in range(TEST_RUNS)]
+def gate_tests_repeated(project, worktree, specs, test_runs=TEST_RUNS):
+    runs = [run_tests(project, worktree, specs) for _ in range(test_runs)]
     codes = [code for code, _, _ in runs]
     seconds = round(sum(elapsed for _, _, elapsed in runs), 1)
     failing_output = next((output for code, output, _ in runs if code != 0), "")
     if all(code == 0 for code in codes):
-        return "pass", f"{TEST_RUNS}/{TEST_RUNS} runs green", seconds
+        return "pass", f"{test_runs}/{test_runs} runs green", seconds
     if all(code != 0 for code in codes):
         return "fail", failing_output, seconds
     green = sum(code == 0 for code in codes)
-    return "flaky", f"{green}/{TEST_RUNS} runs green; output of a failing run:\n{failing_output}", seconds
+    return "flaky", f"{green}/{test_runs} runs green; output of a failing run:\n{failing_output}", seconds
 
 
 def restore_head(worktree, paths):
@@ -474,11 +474,13 @@ def cmd_gates(args):
         if not project.get("test"):
             record("tests", "skipped", "no test command in the project config", 0)
         elif specs:
-            record("tests", *gate_tests_repeated(project, worktree, specs))
+            record("tests", *gate_tests_repeated(project, worktree, specs, int(run.get("testRuns", TEST_RUNS))))
         else:
             record("tests", "skipped", "no spec files for the changed sources", 0)
 
-        if project.get("test"):
+        if run.get("redGreen") is False:
+            record("red-green", "skipped", "switched off for this run (run.json redGreen: false)", 0)
+        elif project.get("test"):
             record("red-green", *gate_red_green(project, worktree, base, changed_specs, changed_sources))
         else:
             record("red-green", "skipped", "no test command in the project config", 0)

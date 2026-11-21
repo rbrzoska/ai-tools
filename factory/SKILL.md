@@ -71,6 +71,10 @@ After approval call Workflow with `scriptPath: <workflows>/factory-build.js` and
 
 The build runs each judge `judgeRuns` times (default 2) and merges the passes: a finding seen in only one pass is `stable: false`. In parallel an adversary writes probe tests and runs them; probes that fail become findings with a rerunnable test as evidence, archived in `<runDir>/probes/`. Report unstable findings, spec-judge verdicts that differ between passes, and the probe results in their own lines.
 
+### Lighter runs (only when the user asks to loosen verification)
+
+Per run, never by default: in `<runDir>/run.json` set `"testRuns": 1` (tests once instead of 3 times) and `"redGreen": false` (the red-green gate is reported `skipped`); in the `factory-build` args pass `judges: ['spec', 'robustness']` (a subset of spec / robustness / tests / standards), `judgeRuns: 1`, `adversary: false`, `maxReviewRounds: 1`. Say in the report what was switched off; trust is then at most `low`.
+
 ## 4. Check the checkers (workflow `factory-canary`)
 
 When the build returns `passed`, call Workflow with `scriptPath: <workflows>/factory-canary.js` and `args: { run, bugs: 3, size, risk }`. It plants known bugs in a throwaway copy and measures how many the tests kill and how many the judges report. Read `~/.factory/canary-keys/<runId>/tests.json` yourself for the test result.
